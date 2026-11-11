@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="100%" height="440" fill="none">
+  <defs>
+    <linearGradient id="guideBg" x1="0" y1="0" x2="960" y2="440" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1D1316" />
+      <stop offset="50%" stop-color="#120D0F" />
+      <stop offset="100%" stop-color="#1D1316" />
+    </linearGradient>
+    <linearGradient id="guideCard" x1="0" y1="0" x2="444" y2="118" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#24171A" />
+      <stop offset="100%" stop-color="#150E11" />
+    </linearGradient>
+
+    <!-- Symmetrical Section Card (444x118) -->
+    <g id="secCard">
+      <rect x="0" y="0" width="444" height="118" rx="9" fill="url(#guideCard)" stroke="#5C4338" stroke-width="1.5" />
+      <rect x="5" y="5" width="434" height="108" rx="6" fill="none" stroke="#D9A74A" stroke-opacity="0.24" stroke-width="1" />
+      <rect x="0" y="18" width="4" height="82" rx="2" fill="#E03131" />
+      <path d="M10 20 V10 H20" stroke="#F2C96D" stroke-width="1.6" stroke-opacity="0.85" />
+      <path d="M434 20 V10 H424" stroke="#F2C96D" stroke-width="1.6" stroke-opacity="0.85" />
+      <path d="M10 98 V108 H20" stroke="#F2C96D" stroke-width="1.6" stroke-opacity="0.85" />
+      <path d="M434 98 V108 H424" stroke="#F2C96D" stroke-width="1.6" stroke-opacity="0.85" />
+    </g>
+  </defs>
+
+  <!-- Outer Panel Frame (960x440) -->
+  <rect x="2" y="2" width="956" height="436" rx="12" fill="url(#guideBg)" stroke="#5C4338" stroke-width="1.8" />
+  <rect x="8" y="8" width="944" height="424" rx="8" fill="none" stroke="#D9A74A" stroke-opacity="0.32" stroke-width="1" />
+
+  <!-- Outer Corner Imperial Gold Ornaments -->
+  <path d="M16 30 V16 H30" stroke="#F2C96D" stroke-width="2.2" />
+  <path d="M944 30 V16 H930" stroke="#F2C96D" stroke-width="2.2" />
+  <path d="M16 410 V424 H30" stroke="#F2C96D" stroke-width="2.2" />
+  <path d="M944 410 V424 H930" stroke="#F2C96D" stroke-width="2.2" />
+
+  <!-- CARD 1: RESUMEN (x=28, y=24) -->
+  <g transform="translate(28, 24)">
+    <use href="#secCard" />
+    <rect x="22" y="22" width="32" height="32" rx="4" fill="#2A1114" stroke="#E03131" stroke-width="1.5" />
+    <text x="38" y="44" text-anchor="middle" fill="#FF6B6B" font-family="serif" font-size="17" font-weight="bold">壱</text>
+    <text x="66" y="44" fill="#F5EFE6" font-family="Georgia, serif" font-size="17" font-weight="bold">Resumen General</text>
+    <text x="22" y="74" fill="#D6C9B8" font-family="system-ui, sans-serif" font-size="12.5">Barra de peligro de 10★, eficacia de elementos y estados (0–3★),</text>
+    <text x="22" y="94" fill="#B5A89A" font-family="system-ui, sans-serif" font-size="12">coronas mín/máx, render oficial y calculadora de Vida (1 a 4 jugadores).</text>
+  </g>
+
+  <!-- CARD 2: FISIOLOGÍA (x=488, y=24) -->
+  <g transform="translate(488, 24)">
+    <use href="#secCard" />
+    <rect x="22" y="22" width="32" height="32" rx="4" fill="#2A1114" stroke="#E03131" stroke-width="1.5" />
+    <text x="38" y="44" text-anchor="middle" fill="#FF6B6B" font-family="serif" font-size="17" font-weight="bold">弐</text>
+    <text x="66" y="44" fill="#F5EFE6" font-family="Georgia, serif" font-size="17" font-weight="bold">Fisiología Interactiva</text>
+    <text x="22" y="74" fill="#D6C9B8" font-family="system-ui, sans-serif" font-size="12.5">Mapa anatómico con pines por parte del cuerpo, filtro de puntos</text>
+    <text x="22" y="94" fill="#B5A89A" font-family="system-ui, sans-serif" font-size="12">débiles (≥45) y tabla completa de Corte, Impacto, Disparo y Elementos.</text>
+  </g>
+
+  <!-- CARD 3: RANGO BAJO (x=28, y=161) -->
+  <g transform="translate(28, 161)">
+    <use href="#secCard" />
+    <rect x="22" y="22" width="32" height="32" rx="4" fill="#2A1114" stroke="#E03131" stroke-width="1.5" />
+    <text x="38" y="44" text-anchor="middle" fill="#FF6B6B" font-family="serif" font-size="17" font-weight="bold">参</text>
+    <text x="66" y="44" fill="#8ECAE6" font-family="Georgia, serif" font-size="17" font-weight="bold">Drops · Rango Bajo</text>
+    <text x="22" y="74" fill="#D6C9B8" font-family="system-ui, sans-serif" font-size="12.5">Materiales clasificados en Recompensa de caza, Captura, Parte rota,</text>
+    <text x="22" y="94" fill="#B5A89A" font-family="system-ui, sans-serif" font-size="12">Despiece y Materiales caídos y montura con porcentajes exactos.</text>
+  </g>
+
+  <!-- CARD 4: RANGO ALTO (x=488, y=161) -->
+  <g transform="translate(488, 161)">
+    <use href="#secCard" />
+    <rect x="22" y="22" width="32" height="32" rx="4" fill="#2A1114" stroke="#E03131" stroke-width="1.5" />
+    <text x="38" y="44" text-anchor="middle" fill="#FF6B6B" font-family="serif" font-size="17" font-weight="bold">肆</text>
+    <text x="66" y="44" fill="#F48C06" font-family="Georgia, serif" font-size="17" font-weight="bold">Drops · Rango Alto</text>
+    <text x="22" y="74" fill="#D6C9B8" font-family="system-ui, sans-serif" font-size="12.5">Materiales exclusivos de Rango Alto con porcentajes unificados por</text>
+    <text x="22" y="94" fill="#B5A89A" font-family="system-ui, sans-serif" font-size="12">cada parte rompible del monstruo y condición de obtención.</text>
+  </g>
+
+  <!-- CARD 5: RANGO MAESTRO (x=28, y=298) -->
+  <g transform="translate(28, 298)">
+    <use href="#secCard" />
+    <rect x="22" y="22" width="32" height="32" rx="4" fill="#2A1114" stroke="#E03131" stroke-width="1.5" />
+    <text x="38" y="44" text-anchor="middle" fill="#FF6B6B" font-family="serif" font-size="17" font-weight="bold">伍</text>
+    <text x="66" y="44" fill="#F2C96D" font-family="Georgia, serif" font-size="17" font-weight="bold">Drops · Rango Maestro</text>
+    <text x="22" y="74" fill="#D6C9B8" font-family="system-ui, sans-serif" font-size="12.5">Materiales de expansión Sunbreak (Rango Maestro) con iconos</text>
+    <text x="22" y="94" fill="#B5A89A" font-family="system-ui, sans-serif" font-size="12">oficiales de alta definición para optimizar el farmeo de equipo.</text>
+  </g>
+
+  <!-- CARD 6: BUSCADOR Y FAVORITOS (x=488, y=298) -->
+  <g transform="translate(488, 298)">
+    <use href="#secCard" />
+    <rect x="22" y="22" width="32" height="32" rx="4" fill="#2A1114" stroke="#E03131" stroke-width="1.5" />
+    <text x="38" y="44" text-anchor="middle" fill="#FF6B6B" font-family="serif" font-size="17" font-weight="bold">陸</text>
+    <text x="66" y="44" fill="#F5EFE6" font-family="Georgia, serif" font-size="17" font-weight="bold">Buscador y Favoritos</text>
+    <text x="22" y="74" fill="#D6C9B8" font-family="system-ui, sans-serif" font-size="12.5">Búsqueda instantánea por nombre de monstruo o por material,</text>
+    <text x="22" y="94" fill="#B5A89A" font-family="system-ui, sans-serif" font-size="12">junto con marcador de favoritos para tus objetivos prioritarios.</text>
+  </g>
+</svg>

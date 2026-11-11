@@ -367,7 +367,7 @@ export const MONSTERS: MonsterData[] = [
         {
           id: 'mr-hueso-solido',
           name: 'Hueso monstruo sólido',
-          icon: 'none',
+          icon: 'Hueso-naranja',
           target: { value: '10%', notes: 'x1' },
           capture: { value: '-- %' },
           brokenPart: { value: '-- %' },

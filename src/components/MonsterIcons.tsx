@@ -134,6 +134,7 @@ export const MATERIAL_ICON_PATHS: Record<
   'Piel-naranja': '/assets/aistudio/Piel-naranja.png',
   'Hueso-amarillo': '/assets/aistudio/Hueso-amarillo.png',
   'Hueso-rosa': '/assets/aistudio/Hueso-rosa.png',
+  'Hueso-naranja': '/assets/aistudio/Hueso-naranja.png',
   'Caparazon-azul': '/assets/aistudio/Caparazon-azul.png',
   'Gema-azul': '/assets/aistudio/Gema-azul.png',
 };

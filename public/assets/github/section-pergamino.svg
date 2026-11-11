@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 186" width="100%" height="186" fill="none">
+  <defs>
+    <linearGradient id="pergaminoBg" x1="0" y1="0" x2="960" y2="186" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1D1316" />
+      <stop offset="50%" stop-color="#130E10" />
+      <stop offset="100%" stop-color="#1D1316" />
+    </linearGradient>
+    <linearGradient id="pergaminoAccent" x1="180" y1="0" x2="780" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C92A2A" stop-opacity="0" />
+      <stop offset="50%" stop-color="#E03131" />
+      <stop offset="100%" stop-color="#C92A2A" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Outer Lacquer Frame -->
+  <rect x="2" y="2" width="956" height="182" rx="12" fill="url(#pergaminoBg)" stroke="#5C4338" stroke-width="1.8" />
+  <rect x="8" y="8" width="944" height="170" rx="8" fill="none" stroke="#D9A74A" stroke-opacity="0.32" stroke-width="1" />
+
+  <!-- Corner Imperial Gold Ornaments -->
+  <path d="M16 30 V16 H30" stroke="#F2C96D" stroke-width="2.2" />
+  <path d="M944 30 V16 H930" stroke="#F2C96D" stroke-width="2.2" />
+  <path d="M16 156 V170 H30" stroke="#F2C96D" stroke-width="2.2" />
+  <path d="M944 156 V170 H930" stroke="#F2C96D" stroke-width="2.2" />
+
+  <!-- Subtle Kanji Watermarks -->
+  <text x="64" y="128" fill="#F5EFE6" fill-opacity="0.03" font-family="serif" font-size="96" font-weight="bold">巻物</text>
+  <text x="720" y="128" fill="#F5EFE6" fill-opacity="0.03" font-family="serif" font-size="96" font-weight="bold">指南</text>
+
+  <!-- Top Hanko Seal + Title -->
+  <g transform="translate(462, 20)">
+    <rect x="0" y="0" width="36" height="36" rx="4" fill="#2A1114" stroke="#E03131" stroke-width="1.6" />
+    <text x="18" y="25" text-anchor="middle" fill="#FF6B6B" font-family="serif" font-size="19" font-weight="bold">書</text>
+  </g>
+
+  <text x="480" y="82" text-anchor="middle" fill="#F5EFE6" font-family="Georgia, serif" font-size="20" font-weight="bold" letter-spacing="1">
+    Enciclopedia Visual de Consulta Instantánea · Kamura &amp; Elgado
+  </text>
+  <rect x="180" y="92" width="600" height="2" fill="url(#pergaminoAccent)" />
+
+  <text x="480" y="120" text-anchor="middle" fill="#D6C9B8" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">
+    Concebida para acompañarte en cada cacería desde tu móvil, tablet o PC con la estética tradicional de tinta Sumi-e,
+  </text>
+  <text x="480" y="142" text-anchor="middle" fill="#D6C9B8" font-family="system-ui, -apple-system, sans-serif" font-size="13.5">
+    laca oscura Urushi y hoja de oro imperial. Consulta al instante qué elemento llevar, dónde golpear y cómo obtener cada material.
+  </text>
+  <text x="480" y="164" text-anchor="middle" fill="#F2C96D" font-family="system-ui, -apple-system, sans-serif" font-size="12.5" font-weight="bold" letter-spacing="1">
+    ACCESO RÁPIDO · SIN DISTRACCIONES · 100% FUNCIONAL SIN CONEXIÓN (PWA)
+  </text>
+</svg>

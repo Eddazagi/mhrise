@@ -11,6 +11,7 @@ export type MaterialIconName =
   | 'Piel-naranja'
   | 'Hueso-amarillo'
   | 'Hueso-rosa'
+  | 'Hueso-naranja'
   | 'Caparazon-azul'
   | 'Gema-azul'
   | 'none';
