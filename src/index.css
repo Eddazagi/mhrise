@@ -1,0 +1,93 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Shippori Mincho', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #110E10;
+    color: #F5EFE6;
+    overflow-x: hidden;
+    overscroll-behavior: none;
+    touch-action: pan-x pan-y;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  *,
+  img,
+  svg {
+    -webkit-touch-callout: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  img {
+    pointer-events: none;
+  }
+
+  input,
+  textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+  }
+
+  .font-mono-num {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Subtle Japanese Washi & Sumi-e ink atmosphere */
+.bg-sumi-texture {
+  background-color: #110E10;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(201, 42, 42, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 85%, rgba(217, 167, 74, 0.06) 0%, transparent 50%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(245, 239, 230, 0.012) 0px,
+      rgba(245, 239, 230, 0.012) 1px,
+      transparent 1px,
+      transparent 10px
+    );
+}
+
+/* Traditional Japanese Header Lacquer Finish */
+.bg-kamura-header {
+  background: linear-gradient(180deg, #211518 0%, #171013 100%);
+  border-bottom: 1px solid #442E2B;
+}
+
+/* Hide visual scrollbars globally while keeping scroll functionality 100% active */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

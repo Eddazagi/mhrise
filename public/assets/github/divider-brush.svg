@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 28" width="100%" height="28" fill="none">
+  <defs>
+    <linearGradient id="crimsonLine" x1="0" y1="0" x2="900" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C92A2A" stop-opacity="0" />
+      <stop offset="20%" stop-color="#C92A2A" stop-opacity="0.75" />
+      <stop offset="50%" stop-color="#E03131" stop-opacity="1" />
+      <stop offset="80%" stop-color="#C92A2A" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#C92A2A" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="goldFilament" x1="80" y1="0" x2="820" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#D9A74A" stop-opacity="0" />
+      <stop offset="30%" stop-color="#D9A74A" stop-opacity="0.8" />
+      <stop offset="50%" stop-color="#FFF3C4" stop-opacity="1" />
+      <stop offset="70%" stop-color="#D9A74A" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#D9A74A" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Calligraphy Brush Stroke Sweep -->
+  <path d="M20 14 C180 9, 340 8, 450 11 C560 8, 720 9, 880 14 C720 19, 560 20, 450 17 C340 20, 180 19, 20 14 Z" fill="url(#crimsonLine)" />
+  <path d="M90 14 C240 12, 380 12, 450 13.5 C520 12, 660 12, 810 14 C660 16, 520 16, 450 14.5 C380 16, 240 16, 90 14 Z" fill="url(#goldFilament)" />
+
+  <!-- Center Kamura Crest Diamond -->
+  <polygon points="450,4 460,14 450,24 440,14" fill="#181013" stroke="#F2C96D" stroke-width="1.8" />
+  <polygon points="450,8 456,14 450,20 444,14" fill="#E03131" />
+</svg>

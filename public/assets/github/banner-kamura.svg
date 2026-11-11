@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 260" width="100%" height="260" fill="none">
+  <defs>
+    <linearGradient id="bgSumi" x1="0" y1="0" x2="960" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#181013" />
+      <stop offset="50%" stop-color="#110E10" />
+      <stop offset="100%" stop-color="#1C1215" />
+    </linearGradient>
+    <radialGradient id="crimsonGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#C92A2A" stop-opacity="0.28" />
+      <stop offset="60%" stop-color="#D9A74A" stop-opacity="0.08" />
+      <stop offset="100%" stop-color="#110E10" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="goldGrad" x1="0" y1="0" x2="960" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6E533B" stop-opacity="0.2" />
+      <stop offset="25%" stop-color="#D9A74A" />
+      <stop offset="50%" stop-color="#FFF3C4" />
+      <stop offset="75%" stop-color="#D9A74A" />
+      <stop offset="100%" stop-color="#6E533B" stop-opacity="0.2" />
+    </linearGradient>
+    <linearGradient id="brushCrimson" x1="120" y1="0" x2="840" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8A1C1C" stop-opacity="0" />
+      <stop offset="15%" stop-color="#C92A2A" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#E03131" stop-opacity="0.95" />
+      <stop offset="85%" stop-color="#C92A2A" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#8A1C1C" stop-opacity="0" />
+    </linearGradient>
+  </defs>
+
+  <!-- Main Sumi-e Background Card -->
+  <rect x="2" y="2" width="956" height="256" rx="14" fill="url(#bgSumi)" stroke="#5C4338" stroke-width="2" />
+  <rect x="10" y="10" width="940" height="240" rx="10" fill="url(#crimsonGlow)" stroke="#D9A74A" stroke-opacity="0.35" stroke-width="1" />
+
+  <!-- Corner Imperial Gold Ornaments -->
+  <path d="M18 38 V18 H38" stroke="#F2C96D" stroke-width="2.5" stroke-linecap="square" />
+  <path d="M942 38 V18 H922" stroke="#F2C96D" stroke-width="2.5" stroke-linecap="square" />
+  <path d="M18 222 V242 H38" stroke="#F2C96D" stroke-width="2.5" stroke-linecap="square" />
+  <path d="M942 222 V242 H922" stroke="#F2C96D" stroke-width="2.5" stroke-linecap="square" />
+
+  <!-- Giant Subtle Background Kanji Watermark (百竜夜行 / 狩猟) -->
+  <text x="115" y="190" fill="#F5EFE6" fill-opacity="0.03" font-family="serif" font-size="145" font-weight="bold">狩猟</text>
+  <text x="695" y="190" fill="#F5EFE6" fill-opacity="0.03" font-family="serif" font-size="145" font-weight="bold">百竜</text>
+
+  <!-- Dynamic Calligraphy Brush Sweep Behind Title -->
+  <path d="M110 132 C260 112, 470 108, 850 126 C810 144, 610 152, 390 150 C230 148, 145 142, 110 132 Z" fill="url(#brushCrimson)" opacity="0.45" />
+  <path d="M190 198 C350 191, 610 191, 770 198 C640 203, 330 203, 190 198 Z" fill="url(#goldGrad)" opacity="0.85" />
+
+  <!-- Top Hanko Vermilion Stamp Seal -->
+  <g transform="translate(458, 28)">
+    <rect x="0" y="0" width="44" height="44" rx="5" fill="#2A1114" stroke="#E03131" stroke-width="2" />
+    <rect x="3" y="3" width="38" height="38" rx="3" fill="none" stroke="#F2C96D" stroke-opacity="0.4" stroke-width="1" />
+    <text x="22" y="31" text-anchor="middle" fill="#FF6B6B" font-family="serif" font-size="25" font-weight="bold">狩</text>
+  </g>
+
+  <!-- Main Title -->
+  <text x="480" y="122" text-anchor="middle" fill="#F5EFE6" font-family="Georgia, 'Times New Roman', serif" font-size="38" font-weight="bold" letter-spacing="2">
+    MHRise &amp; Sunbreak · Base de Datos
+  </text>
+
+  <!-- Subtitle -->
+  <text x="480" y="162" text-anchor="middle" fill="#F2C96D" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="600" letter-spacing="3">
+    PERGAMINOS DE CONSULTA RÁPIDA · ALDEA KAMURA &amp; ELGADO
+  </text>
+
+  <!-- Bottom Caption -->
+  <text x="480" y="226" text-anchor="middle" fill="#B5A89A" font-family="system-ui, -apple-system, sans-serif" font-size="13" letter-spacing="1">
+    Fisiología Interactiva · Debilidades · Puntos de Vida (1–4J) · Drops Unificados (Rango Bajo, Alto y Maestro)
+  </text>
+</svg>

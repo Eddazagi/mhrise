@@ -1,0 +1,6 @@
+{
+  "name": "MHRise & Sunbreak Database",
+  "description": "Base de datos y consulta rápida de monstruos, fisiología, debilidades y materiales para Monster Hunter Rise y Sunbreak.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
