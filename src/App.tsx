@@ -3,13 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Bookmark, Download, Swords, X } from 'lucide-react';
 import { MONSTERS } from './data/monsters';
 import { MonsterList } from './components/MonsterList';
 import { DetailTabId, MonsterDetail } from './components/MonsterDetail';
 import { useOnlineStatus, usePWAInstall } from './hooks/usePWAInstall';
 import { HankoSeal } from './components/JapaneseBrushElements';
+import { ALL_STATIC_ICON_URLS } from './components/MonsterIcons';
 
 const BOOKMARKS_STORAGE_KEY = 'mhrise_db_bookmarked_monsters_v1';
 
@@ -37,6 +38,29 @@ export default function App() {
 
   const { isInstallable, isInstalled, isIOS, install } = usePWAInstall();
   const isOnline = useOnlineStatus();
+
+  // Deduplicated list of every image/icon URL in the app for persistent GPU memory pre-decoding
+  const allPreloadUrls = useMemo(() => {
+    const urls = new Set<string>(ALL_STATIC_ICON_URLS);
+    for (const m of MONSTERS) {
+      if (m.iconUrl) urls.add(m.iconUrl);
+      if (m.renderUrl) urls.add(m.renderUrl);
+    }
+    return Array.from(urls);
+  }, []);
+
+  useEffect(() => {
+    allPreloadUrls.forEach((url) => {
+      const img = new Image();
+      img.decoding = 'sync';
+      img.src = url;
+      if (typeof img.decode === 'function') {
+        img.decode().catch(() => {
+          // Ignore decode errors for already cached assets
+        });
+      }
+    });
+  }, [allPreloadUrls]);
 
   useEffect(() => {
     try {
@@ -168,34 +192,57 @@ export default function App() {
 
   return (
     <div className="h-dvh w-full bg-sumi-texture text-[#F5EFE6] flex flex-col overflow-hidden">
-      {/* Main Unified Single-View Container (Mobile & PC) */}
+      {/* Persistent Offscreen GPU Texture Cache: keeps all renders & icons decoded in memory so opening any monster or tab takes 0ms */}
+      <div
+        aria-hidden="true"
+        className="fixed -left-[9999px] -top-[9999px] w-px h-px overflow-hidden opacity-[0.01] pointer-events-none select-none"
+      >
+        {allPreloadUrls.map((url) => (
+          <img
+            key={url}
+            src={url}
+            alt=""
+            loading="eager"
+            decoding="sync"
+            draggable={false}
+          />
+        ))}
+      </div>
+
+      {/* Main Unified Single-View Container (Mobile & PC) - Both views stay mounted for 0ms switching */}
       <div className="flex-1 flex min-h-0 w-full max-w-[1400px] mx-auto border-x border-[#2B1D1B]/60">
-        {currentView === 'list' ? (
-          <div className="w-full h-full">
-            <MonsterList
-              monsters={MONSTERS}
-              selectedMonsterId={selectedMonster.id}
-              onSelectMonster={handleSelectMonster}
-              bookmarkedIds={bookmarkedIds}
-              onlyBookmarks={onlyBookmarks}
-              onToggleFilterBookmarks={() => setOnlyBookmarks((prev) => !prev)}
-              onOpenDrawer={() => setDrawerOpen(true)}
-            />
-          </div>
-        ) : (
-          <div className="flex-1 min-w-0 h-full">
-            <MonsterDetail
-              monster={selectedMonster}
-              monsters={MONSTERS}
-              bookmarkedIds={bookmarkedIds}
-              onSelectMonster={handleSelectMonster}
-              onBackToList={handleBackToList}
-              isBookmarked={bookmarkedIds.includes(selectedMonster.id)}
-              onToggleBookmark={handleToggleBookmark}
-              requestedNavigation={requestedNavigation}
-            />
-          </div>
-        )}
+        <div
+          className={
+            currentView === 'list' ? 'w-full h-full' : 'hidden'
+          }
+        >
+          <MonsterList
+            monsters={MONSTERS}
+            selectedMonsterId={selectedMonster.id}
+            onSelectMonster={handleSelectMonster}
+            bookmarkedIds={bookmarkedIds}
+            onlyBookmarks={onlyBookmarks}
+            onToggleFilterBookmarks={() => setOnlyBookmarks((prev) => !prev)}
+            onOpenDrawer={() => setDrawerOpen(true)}
+          />
+        </div>
+
+        <div
+          className={
+            currentView === 'detail' ? 'flex-1 min-w-0 h-full' : 'hidden'
+          }
+        >
+          <MonsterDetail
+            monster={selectedMonster}
+            monsters={MONSTERS}
+            bookmarkedIds={bookmarkedIds}
+            onSelectMonster={handleSelectMonster}
+            onBackToList={handleBackToList}
+            isBookmarked={bookmarkedIds.includes(selectedMonster.id)}
+            onToggleBookmark={handleToggleBookmark}
+            requestedNavigation={requestedNavigation}
+          />
+        </div>
       </div>
 
       {/* Navigation Drawer - Japanese Kamura Guild Scroll Style */}

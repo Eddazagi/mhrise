@@ -176,7 +176,6 @@ export const MonsterList: React.FC<MonsterListProps> = ({
         <div className="flex-1 overflow-y-auto overscroll-y-none touch-pan-y divide-y divide-dashed divide-[#382927]">
           {filteredMonsters.length > 0 ? (
             filteredMonsters.map((monster) => {
-              const isSelected = monster.id === selectedMonsterId;
               const isBookmarked = bookmarkedIds.includes(monster.id);
 
               return (
@@ -184,20 +183,10 @@ export const MonsterList: React.FC<MonsterListProps> = ({
                   key={monster.id}
                   type="button"
                   onClick={() => onSelectMonster(monster.id, 'resumen')}
-                  className={`group relative w-full flex items-center gap-4 px-4 sm:px-5 py-4 text-left transition-all cursor-pointer overflow-hidden ${
-                    isSelected
-                      ? 'bg-gradient-to-r from-[#2A181C] via-[#1F1518] to-transparent'
-                      : 'hover:bg-[#1E1518]'
-                  }`}
+                  className="group relative w-full flex items-center gap-4 px-4 sm:px-5 py-4 text-left transition-colors cursor-pointer overflow-hidden hover:bg-[#1E1518] active:bg-[#26181C]"
                 >
-                  {/* Left Crimson Brush Accent on Active/Hover */}
-                  <span
-                    className={`absolute left-0 top-2 bottom-2 w-1 rounded-r-full transition-opacity ${
-                      isSelected
-                        ? 'bg-gradient-to-b from-[#E03131] to-[#D9A74A] opacity-100'
-                        : 'bg-[#C92A2A] opacity-0 group-hover:opacity-75'
-                    }`}
-                  />
+                  {/* Left Crimson Brush Accent only on Hover / Active */}
+                  <span className="absolute left-0 top-2 bottom-2 w-1 rounded-r-full bg-gradient-to-b from-[#E03131] to-[#D9A74A] opacity-0 group-hover:opacity-85 group-active:opacity-100 transition-opacity" />
 
                   {/* Ornate Japanese Lacquer & Gold Monster Icon Frame */}
                   <OrnateIconFrame sizeClass="w-16 h-16">

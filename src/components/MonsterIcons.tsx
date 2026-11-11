@@ -16,6 +16,8 @@ export const TransparentMonsterIcon: React.FC<{
     <img
       src={src}
       alt={alt}
+      loading="eager"
+      decoding="sync"
       draggable={false}
       onContextMenu={(e) => e.preventDefault()}
       referrerPolicy="no-referrer"
@@ -65,6 +67,8 @@ export const ElementIcon: React.FC<{
       src={item.src}
       alt={item.label}
       title={item.label}
+      loading="eager"
+      decoding="sync"
       draggable={false}
       onContextMenu={(e) => e.preventDefault()}
       referrerPolicy="no-referrer"
@@ -83,6 +87,8 @@ export const AilmentIcon: React.FC<{
       src={item.src}
       alt={item.label}
       title={item.label}
+      loading="eager"
+      decoding="sync"
       draggable={false}
       onContextMenu={(e) => e.preventDefault()}
       referrerPolicy="no-referrer"
@@ -110,6 +116,8 @@ export const DamageTypeIcon: React.FC<{
       src={item.src}
       alt={item.label}
       title={item.label}
+      loading="eager"
+      decoding="sync"
       draggable={false}
       onContextMenu={(e) => e.preventDefault()}
       referrerPolicy="no-referrer"
@@ -139,6 +147,15 @@ export const MATERIAL_ICON_PATHS: Record<
   'Gema-azul': '/assets/aistudio/Gema-azul.png',
 };
 
+export const ALL_STATIC_ICON_URLS: string[] = [
+  ...Object.values(ELEMENT_ICON_PATHS).map((item) => item.src),
+  ...Object.values(AILMENT_ICON_PATHS).map((item) => item.src),
+  ...Object.values(DAMAGE_ICON_PATHS).map((item) => item.src),
+  ...Object.values(MATERIAL_ICON_PATHS),
+  '/assets/aistudio/Tama_o-Minimo_4a3c13cf.png',
+  '/assets/aistudio/Tama_o-Maximo_99025648.png',
+];
+
 export const MaterialIcon: React.FC<{
   icon?: MaterialIconName;
   type?: MaterialIconType;
@@ -159,6 +176,8 @@ export const MaterialIcon: React.FC<{
     <img
       src={src}
       alt={alt}
+      loading="eager"
+      decoding="sync"
       draggable={false}
       onContextMenu={(e) => e.preventDefault()}
       referrerPolicy="no-referrer"

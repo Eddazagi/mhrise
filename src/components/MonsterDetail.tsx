@@ -506,6 +506,8 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                         <img
                           src="/assets/aistudio/Tama_o-Minimo_4a3c13cf.png"
                           alt="Tamaño Mínimo"
+                          loading="eager"
+                          decoding="sync"
                           draggable={false}
                           referrerPolicy="no-referrer"
                           className="w-7 h-7 sm:w-8 sm:h-8 object-contain shrink-0 pointer-events-none select-none"
@@ -524,6 +526,8 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                         <img
                           src="/assets/aistudio/Tama_o-Maximo_99025648.png"
                           alt="Tamaño Máximo"
+                          loading="eager"
+                          decoding="sync"
                           draggable={false}
                           referrerPolicy="no-referrer"
                           className="w-7 h-7 sm:w-8 sm:h-8 object-contain shrink-0 pointer-events-none select-none"
@@ -555,6 +559,8 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                       <img
                         src={monster.renderUrl}
                         alt={`Render oficial de ${monster.name}`}
+                        loading="eager"
+                        decoding="sync"
                         referrerPolicy="no-referrer"
                         draggable={false}
                         className="w-full h-full object-contain drop-shadow-[0_14px_26px_rgba(0,0,0,0.9)] group-hover:scale-[1.03] transition-transform duration-200 pointer-events-none select-none"
@@ -664,6 +670,8 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                     <img
                       src={monster.renderUrl}
                       alt={`Anatomía de ${monster.name}`}
+                      loading="eager"
+                      decoding="sync"
                       referrerPolicy="no-referrer"
                       draggable={false}
                       className="w-full h-full object-contain pointer-events-none select-none"
@@ -1146,6 +1154,8 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
               <img
                 src={monster.renderUrl}
                 alt={`Render oficial ampliado de ${monster.name}`}
+                loading="eager"
+                decoding="sync"
                 referrerPolicy="no-referrer"
                 draggable={false}
                 style={{
