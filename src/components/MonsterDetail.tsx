@@ -128,6 +128,7 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
     x: 0,
     y: 0,
   });
+  const [isPanning, setIsPanning] = useState<boolean>(false);
   const touchStateRef = useRef<{
     mode: 'none' | 'pan' | 'pinch';
     startDist: number;
@@ -145,6 +146,7 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
   });
 
   const resetRenderZoom = () => {
+    setIsPanning(false);
     setZoomScale(1);
     setZoomTranslate({ x: 0, y: 0 });
   };
@@ -735,19 +737,19 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                   </div>
                 </div>
 
-                {/* Right / Bottom: Full-Width No-Scroll Physiology Table */}
+                {/* Right / Bottom: Full-Width No-Scroll Symmetrical Physiology Table */}
                 <div className="xl:col-span-7 w-full">
-                  <table className="w-full table-fixed border-collapse text-left">
+                  <table className="monster-physiology-table w-full table-fixed border-collapse text-left">
                     <thead>
-                      <tr className="bg-[#1F1518] border-b border-[#4A332D] text-[10px] sm:text-xs font-semibold text-[#D6C9B8]">
-                        <th className="w-[20%] sm:w-[22%] py-2.5 px-2 sm:px-4 font-display">
+                      <tr className="h-12 bg-[#1F1518] border-b border-[#4A332D] text-[10px] sm:text-xs font-semibold text-[#D6C9B8]">
+                        <th className="w-[24%] h-12 py-0 px-2 sm:px-3.5 font-display align-middle">
                           Partes
                         </th>
                         <th
-                          className="w-[10%] py-2 px-0.5 text-center border-l border-[#352523]"
+                          className="w-[9.5%] h-12 py-0 px-0.5 text-center align-middle border-l border-[#352523]"
                           title="Corte"
                         >
-                          <div className="flex flex-col items-center gap-0.5">
+                          <div className="flex flex-col items-center justify-center gap-0.5">
                             <DamageTypeIcon
                               type="sever"
                               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -758,10 +760,10 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                           </div>
                         </th>
                         <th
-                          className="w-[10%] py-2 px-0.5 text-center border-l border-[#352523]"
+                          className="w-[9.5%] h-12 py-0 px-0.5 text-center align-middle border-l border-[#352523]"
                           title="Impacto"
                         >
-                          <div className="flex flex-col items-center gap-0.5">
+                          <div className="flex flex-col items-center justify-center gap-0.5">
                             <DamageTypeIcon
                               type="blunt"
                               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -772,10 +774,10 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                           </div>
                         </th>
                         <th
-                          className="w-[10%] py-2 px-0.5 text-center border-l border-[#352523]"
+                          className="w-[9.5%] h-12 py-0 px-0.5 text-center align-middle border-l border-[#352523]"
                           title="Disparo"
                         >
-                          <div className="flex flex-col items-center gap-0.5">
+                          <div className="flex flex-col items-center justify-center gap-0.5">
                             <DamageTypeIcon
                               type="shot"
                               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -786,10 +788,10 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                           </div>
                         </th>
                         <th
-                          className="w-[10%] py-2 px-0.5 text-center border-l border-[#4E3831]"
+                          className="w-[9.5%] h-12 py-0 px-0.5 text-center align-middle border-l border-[#4E3831]"
                           title="Fuego"
                         >
-                          <div className="flex flex-col items-center gap-0.5">
+                          <div className="flex flex-col items-center justify-center gap-0.5">
                             <ElementIcon
                               type="fire"
                               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -800,10 +802,10 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                           </div>
                         </th>
                         <th
-                          className="w-[10%] py-2 px-0.5 text-center border-l border-[#352523]"
+                          className="w-[9.5%] h-12 py-0 px-0.5 text-center align-middle border-l border-[#352523]"
                           title="Agua"
                         >
-                          <div className="flex flex-col items-center gap-0.5">
+                          <div className="flex flex-col items-center justify-center gap-0.5">
                             <ElementIcon
                               type="water"
                               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -814,10 +816,10 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                           </div>
                         </th>
                         <th
-                          className="w-[10%] py-2 px-0.5 text-center border-l border-[#352523]"
+                          className="w-[9.5%] h-12 py-0 px-0.5 text-center align-middle border-l border-[#352523]"
                           title="Rayo"
                         >
-                          <div className="flex flex-col items-center gap-0.5">
+                          <div className="flex flex-col items-center justify-center gap-0.5">
                             <ElementIcon
                               type="thunder"
                               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -828,10 +830,10 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                           </div>
                         </th>
                         <th
-                          className="w-[10%] py-2 px-0.5 text-center border-l border-[#352523]"
+                          className="w-[9.5%] h-12 py-0 px-0.5 text-center align-middle border-l border-[#352523]"
                           title="Hielo"
                         >
-                          <div className="flex flex-col items-center gap-0.5">
+                          <div className="flex flex-col items-center justify-center gap-0.5">
                             <ElementIcon
                               type="ice"
                               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -842,10 +844,10 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                           </div>
                         </th>
                         <th
-                          className="w-[10%] py-2 px-0.5 text-center border-l border-[#352523]"
+                          className="w-[9.5%] h-12 py-0 px-0.5 text-center align-middle border-l border-[#352523]"
                           title="Draco"
                         >
-                          <div className="flex flex-col items-center gap-0.5">
+                          <div className="flex flex-col items-center justify-center gap-0.5">
                             <ElementIcon
                               type="dragon"
                               className="w-4 h-4 sm:w-5 sm:h-5"
@@ -875,42 +877,43 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                           <tr
                             key={row.id}
                             onClick={() => setSelectedPartId(row.id)}
-                            className={`cursor-pointer transition-colors ${
+                            className={`h-12 cursor-pointer transition-colors ${
                               isSelected
                                 ? 'bg-[#2B1B1F]'
                                 : 'hover:bg-[#1E1518]'
                             }`}
                           >
                             <td
-                              className={`py-3 px-2 sm:px-4 text-xs sm:text-sm font-medium truncate ${
+                              className={`h-12 py-0 px-2 sm:px-3.5 text-xs sm:text-sm font-medium leading-tight align-middle truncate ${
                                 isSelected ? 'text-[#F2C96D]' : 'text-[#F5EFE6]'
                               }`}
+                              title={row.part}
                             >
                               {row.part}
                             </td>
                             <td
-                              className={`py-3 px-0.5 text-center font-mono-num text-xs sm:text-sm border-l border-[#352523] ${physCellClass(
+                              className={`h-12 py-0 px-0.5 text-center align-middle font-mono-num text-xs sm:text-sm border-l border-[#352523] ${physCellClass(
                                 row.sever
                               )}`}
                             >
                               {row.sever}
                             </td>
                             <td
-                              className={`py-3 px-0.5 text-center font-mono-num text-xs sm:text-sm border-l border-[#352523] ${physCellClass(
+                              className={`h-12 py-0 px-0.5 text-center align-middle font-mono-num text-xs sm:text-sm border-l border-[#352523] ${physCellClass(
                                 row.blunt
                               )}`}
                             >
                               {row.blunt}
                             </td>
                             <td
-                              className={`py-3 px-0.5 text-center font-mono-num text-xs sm:text-sm border-l border-[#352523] ${physCellClass(
+                              className={`h-12 py-0 px-0.5 text-center align-middle font-mono-num text-xs sm:text-sm border-l border-[#352523] ${physCellClass(
                                 row.shot
                               )}`}
                             >
                               {row.shot}
                             </td>
                             <td
-                              className={`py-3 px-0.5 text-center font-mono-num text-xs sm:text-sm border-l border-[#4E3831] ${elemCellClass(
+                              className={`h-12 py-0 px-0.5 text-center align-middle font-mono-num text-xs sm:text-sm border-l border-[#4E3831] ${elemCellClass(
                                 row.fire,
                                 'text-[#F87171]'
                               )}`}
@@ -918,7 +921,7 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                               {row.fire}
                             </td>
                             <td
-                              className={`py-3 px-0.5 text-center font-mono-num text-xs sm:text-sm border-l border-[#352523] ${elemCellClass(
+                              className={`h-12 py-0 px-0.5 text-center align-middle font-mono-num text-xs sm:text-sm border-l border-[#352523] ${elemCellClass(
                                 row.water,
                                 'text-[#38BDF8]'
                               )}`}
@@ -926,7 +929,7 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                               {row.water}
                             </td>
                             <td
-                              className={`py-3 px-0.5 text-center font-mono-num text-xs sm:text-sm border-l border-[#352523] ${elemCellClass(
+                              className={`h-12 py-0 px-0.5 text-center align-middle font-mono-num text-xs sm:text-sm border-l border-[#352523] ${elemCellClass(
                                 row.thunder,
                                 'text-[#FACC15]'
                               )}`}
@@ -934,7 +937,7 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                               {row.thunder}
                             </td>
                             <td
-                              className={`py-3 px-0.5 text-center font-mono-num text-xs sm:text-sm border-l border-[#352523] ${elemCellClass(
+                              className={`h-12 py-0 px-0.5 text-center align-middle font-mono-num text-xs sm:text-sm border-l border-[#352523] ${elemCellClass(
                                 row.ice,
                                 'text-[#7DD3FC]'
                               )}`}
@@ -942,7 +945,7 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                               {row.ice}
                             </td>
                             <td
-                              className={`py-3 px-0.5 text-center font-mono-num text-xs sm:text-sm border-l border-[#352523] ${elemCellClass(
+                              className={`h-12 py-0 px-0.5 text-center align-middle font-mono-num text-xs sm:text-sm border-l border-[#352523] ${elemCellClass(
                                 row.dragon,
                                 'text-[#C084FC]'
                               )}`}
@@ -990,7 +993,7 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                   {monster.name} — Render Oficial
                 </h3>
                 <p className="text-xs text-[#B5A89A]">
-                  Usa 2 dedos o doble toque para hacer zoom (
+                  Usa la rueda, 2 dedos o doble toque para zoom y arrastra para mover (
                   {Math.round(zoomScale * 100)}%)
                 </p>
               </div>
@@ -1019,7 +1022,13 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
 
             <div
               data-allow-pinch-zoom="true"
-              className="relative flex-1 min-h-[55dvh] max-h-[75dvh] flex items-center justify-center overflow-hidden rounded-xl bg-[radial-gradient(circle_at_center,rgba(201,42,42,0.14)_0%,rgba(12,9,11,0.98)_75%)] border border-[#3E2B28] touch-none select-none cursor-grab active:cursor-grabbing"
+              className={`relative flex-1 min-h-[55dvh] max-h-[75dvh] flex items-center justify-center overflow-hidden rounded-xl bg-[radial-gradient(circle_at_center,rgba(201,42,42,0.14)_0%,rgba(12,9,11,0.98)_75%)] border border-[#3E2B28] touch-none select-none ${
+                zoomScale > 1
+                  ? isPanning
+                    ? 'cursor-grabbing'
+                    : 'cursor-grab'
+                  : 'cursor-zoom-in'
+              }`}
               onDoubleClick={() => {
                 if (zoomScale > 1) {
                   resetRenderZoom();
@@ -1037,10 +1046,39 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                   return next;
                 });
               }}
+              onMouseDown={(e) => {
+                if (e.button !== 0 || zoomScale <= 1) return;
+                e.preventDefault();
+                setIsPanning(true);
+                touchStateRef.current.mode = 'pan';
+                touchStateRef.current.startX = e.clientX - zoomTranslate.x;
+                touchStateRef.current.startY = e.clientY - zoomTranslate.y;
+              }}
+              onMouseMove={(e) => {
+                if (
+                  touchStateRef.current.mode !== 'pan' ||
+                  !isPanning ||
+                  zoomScale <= 1
+                )
+                  return;
+                e.preventDefault();
+                const nextX = e.clientX - touchStateRef.current.startX;
+                const nextY = e.clientY - touchStateRef.current.startY;
+                setZoomTranslate({ x: nextX, y: nextY });
+              }}
+              onMouseUp={() => {
+                if (isPanning) setIsPanning(false);
+                touchStateRef.current.mode = 'none';
+              }}
+              onMouseLeave={() => {
+                if (isPanning) setIsPanning(false);
+                touchStateRef.current.mode = 'none';
+              }}
               onTouchStart={(e) => {
                 if (e.touches.length === 2) {
                   const dx = e.touches[0].clientX - e.touches[1].clientX;
                   const dy = e.touches[0].clientY - e.touches[1].clientY;
+                  setIsPanning(true);
                   touchStateRef.current.mode = 'pinch';
                   touchStateRef.current.startDist = Math.hypot(dx, dy);
                   touchStateRef.current.startScale = zoomScale;
@@ -1057,11 +1095,14 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                     return;
                   }
                   touchStateRef.current.lastTapTime = now;
-                  touchStateRef.current.mode = 'pan';
-                  touchStateRef.current.startX =
-                    e.touches[0].clientX - zoomTranslate.x;
-                  touchStateRef.current.startY =
-                    e.touches[0].clientY - zoomTranslate.y;
+                  if (zoomScale > 1) {
+                    setIsPanning(true);
+                    touchStateRef.current.mode = 'pan';
+                    touchStateRef.current.startX =
+                      e.touches[0].clientX - zoomTranslate.x;
+                    touchStateRef.current.startY =
+                      e.touches[0].clientY - zoomTranslate.y;
+                  }
                 }
               }}
               onTouchMove={(e) => {
@@ -1098,6 +1139,7 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                 }
               }}
               onTouchEnd={() => {
+                setIsPanning(false);
                 touchStateRef.current.mode = 'none';
               }}
             >
@@ -1109,7 +1151,11 @@ export const MonsterDetail: React.FC<MonsterDetailProps> = ({
                 style={{
                   transform: `translate3d(${zoomTranslate.x}px, ${zoomTranslate.y}px, 0) scale(${zoomScale})`,
                 }}
-                className="max-h-[68dvh] w-auto object-contain transition-transform duration-75 ease-out pointer-events-none"
+                className={`max-h-[68dvh] w-auto object-contain pointer-events-none select-none ${
+                  isPanning
+                    ? 'transition-none'
+                    : 'transition-transform duration-100 ease-out'
+                }`}
               />
             </div>
           </div>

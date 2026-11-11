@@ -245,7 +245,7 @@ export const MonsterList: React.FC<MonsterListProps> = ({
               </p>
               <p className="text-xs text-[#A8998A] mt-2 leading-relaxed max-w-md mx-auto">
                 {activeSizeTab === 'PEQUEÑO'
-                  ? 'Actualmente estamos trabajando paso a paso comenzando con los monstruos grandes (Aknosom).'
+                  ? 'Actualmente estamos trabajando paso a paso comenzando con el catálogo de monstruos grandes.'
                   : 'Puedes marcar cualquier monstruo con el sello de favoritos en la esquina superior derecha de su pergamino.'}
               </p>
             </div>
